@@ -59,6 +59,7 @@ describe('Star', () => {
         milkyWay = new Galaxy('Milky way', 13, 154000, 'spiral', []);
         sol = new Star('Sol', 4.6, 1, milkyWay, []);
         earth = new Planet('Earth', 4.5, .0000003, true);
+        // Note the mass numbers start being very inaccurate around this point, apologies to any space-lovers!
     })
 
     it('should be a subclass of StellarObject', () => {
