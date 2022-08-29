@@ -3,7 +3,7 @@
 Clone the GitHub repository from the button below.
 
 In this assessment, you will be implementing a model of celestial bodies,
-astronauts, and spaceships based solely on test specs and your TDD/OOP skills.
+spaceships, and astronauts based solely on test specs and your TDD/OOP skills.
 
 Read the specs carefully to understand the requirements and file
 structure of the project. About halfway through the spec you will start
