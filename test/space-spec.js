@@ -237,6 +237,25 @@ describe('Moon', () => {
     })
 })
 
+describe('Spaceship', () => {
+    let earth = new Planet('Earth', 4.5, .0000003, true);
+    let moon = new Moon('Moon', 4.45, .0123, earth);
+
+    it('should not have an associated astronaut or lightspeed capability by default', () => {
+        let ship = new Spaceship('Titanic', 'Germany');
+        expect(ship.astronaut).to.equal(null);
+        expect(ship.lightspeedCapability).to.be.false;
+    })
+
+    it('should detect alien technology if it has been flown to the moon', () => {
+        let buzz = earth.recruitAstronaut('Buzz Aldrin', 36, 'USA', 'mechanical engineering');
+        earth.buildSpaceship(buzz, 'Voyager', 'USA');
+        buzz.colonizeMoon(moon);
+        expect(buzz.spaceship.detectAlienTechnology()).to.equal(`Voyager has detected alien technology on the dark side of the moon!`);
+        expect(buzz.spaceship.lightspeedCapability).to.be.true;
+    })
+})
+
 describe('Astronaut', () => {
     let buzz;
     let earth;
@@ -275,15 +294,7 @@ describe('Astronaut', () => {
     })
 
     describe('ventureForth()', () => {
-        context('if their ship has lightspeed capability', () => {
-            it('should boldly go where no one has gone before', () => {
-                earth.buildSpaceship(buzz, 'Voyager', 'USA');
-                buzz.colonizeMoon(moon);
-                buzz.spaceship.detectAlienTechnology();
-                expect(buzz.ventureForth()).to.equal('Buzz Aldrin is the first human to explore deep space!');
-            })
-        })
-        context('if their ship does NOT have lightspeed capability', () => {
+        context('if their ship does not have lightspeed capability', () => {
             it('should throw a Spacetime Error', () => {
                 earth.buildSpaceship(buzz, 'Voyager', 'USA');
                 buzz.spaceship.lightspeedCapability = false;
@@ -296,24 +307,13 @@ describe('Astronaut', () => {
                 }
             })
         })
-    })
-})
-
-describe('Spaceship', () => {
-    let earth = new Planet('Earth', 4.5, .0000003, true);
-    let moon = new Moon('Moon', 4.45, .0123, earth);
-
-    it('should not have an associated astronaut or lightspeed capability by default', () => {
-        let ship = new Spaceship('Titanic', 'Germany');
-        expect(ship.astronaut).to.equal(null);
-        expect(ship.lightspeedCapability).to.be.false;
-    })
-
-    it('should detect alien technology if it has been flown to the moon', () => {
-        let buzz = earth.recruitAstronaut('Buzz Aldrin', 36, 'USA', 'mechanical engineering');
-        earth.buildSpaceship(buzz, 'Voyager', 'USA');
-        buzz.colonizeMoon(moon);
-        expect(buzz.spaceship.detectAlienTechnology()).to.equal(`Voyager has detected alien technology on the dark side of the moon!`);
-        expect(buzz.spaceship.lightspeedCapability).to.be.true;
+        context('if their ship has lightspeed capability', () => {
+            it('should boldly go where no one has gone before', () => {
+                earth.buildSpaceship(buzz, 'Voyager', 'USA');
+                buzz.colonizeMoon(moon);
+                buzz.spaceship.detectAlienTechnology();
+                expect(buzz.ventureForth()).to.equal('Buzz Aldrin is the first human to explore deep space!');
+            })
+        })
     })
 })
