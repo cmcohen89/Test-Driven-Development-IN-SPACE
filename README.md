@@ -16,3 +16,5 @@ I hope you enjoy and have fun!!!
 1. `npm install` to install Mocha and Chai
 2. Set up all the classes/exports to get mocha to run
 2. `mocha` to run the test cases
+
+Solutions: https://github.com/cmcohen89/week-4-practice-assessment-IN-SPACE-solutions
