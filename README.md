@@ -1,8 +1,6 @@
-# TDD and OOP practice assessment...IN SPACE!
+# Test-Driven Development and Object-Oriented Puzzling...IN SPACE!
 
-Clone the GitHub repository from the button below.
-
-In this assessment, you will be implementing a model of celestial bodies,
+In this "game", you will be implementing a model of celestial bodies,
 spaceships, and astronauts based solely on test specs and your TDD/OOP skills.
 
 Read the specs carefully to understand the requirements and file
@@ -17,4 +15,4 @@ I hope you enjoy and have fun!!!
 2. Set up all the classes/exports to get mocha to run
 2. `mocha` to run the test cases
 
-Solutions: https://github.com/cmcohen89/week-4-practice-assessment-IN-SPACE-solutions
+Solutions: https://github.com/cmcohen89/Test-Driven-Development-IN-SPACE-solutions
